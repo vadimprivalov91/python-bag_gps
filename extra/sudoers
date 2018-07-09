@@ -1,0 +1,4 @@
+Cmnd_Alias      RESTART_GUNICORN = /usr/sbin/service gunicorn restart
+Cmnd_Alias      RESTART_NODE = /usr/bin/pm2 restart app
+
+nt ALL=(ALL) NOPASSWD: RESTART_GUNICORN, RESTART_NODE

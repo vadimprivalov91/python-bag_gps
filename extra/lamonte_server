@@ -1,0 +1,28 @@
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        server_name lamonte-london.com www.lamonte-london.com;
+
+        location /api {
+                proxy_pass http://unix:/home/nt/lamonte_server/gunicorn.socket;
+                include proxy_params;
+        }
+
+        location /media {
+                root /home/nt/lamonte_server/media;
+        }
+
+        location /static {
+                root /home/nt/lamonte_server;
+        }
+
+        location ~ /\.ht {
+                deny all;
+        }
+
+        location / {
+            root   /home/nt/lamonte_server/www;
+            index  index.html;
+        }
+}

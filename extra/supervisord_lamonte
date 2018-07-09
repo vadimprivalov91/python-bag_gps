@@ -1,0 +1,1 @@
+/home/nt/.venv/lamonte/bin/gunicorn lamonte.wsgi:application -c /home/nt/lamonte_server/gunicorn.conf.py

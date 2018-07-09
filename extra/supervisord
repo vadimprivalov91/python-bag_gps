@@ -1,0 +1,7 @@
+[program:lamonte]
+command=/home/nt/.venv/lamonte/bin/gunicorn --debug --log-level debug lamonte.wsgi:application -c /home/nt/lamonte_server/gunicorn.conf.py
+directory=/home/nt/lamonte_server
+user=nt
+autostart=true
+autorestart=true
+redirect_stderr=true
